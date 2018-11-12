@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply from: '../prepare-robolectric.gradle'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -33,7 +33,7 @@ android {
             }
             afterSuite { desc, result ->
                 if (!desc.parent) { // will match the outermost suite
-                    def output = "      ${result.resultType} (${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)     "
+                    def output = "${result.resultType} (${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
                     def repeatLength = output.length()
                     println '\n\n' + ('-' * repeatLength) + '\n' + output + '\n' + ('-' * repeatLength) + '\n'
 
@@ -83,9 +83,9 @@ allprojects { p ->
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:design:26.1.0'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation 'com.github.wix-playground:ahbottomnavigation:2.4.5'
     implementation 'com.github.wix-playground:reflow-animator:1.0.4'

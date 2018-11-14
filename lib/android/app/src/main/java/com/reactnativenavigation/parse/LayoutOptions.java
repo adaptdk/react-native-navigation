@@ -29,7 +29,6 @@ public class LayoutOptions {
         if (other.backgroundColor.hasValue()) backgroundColor = other.backgroundColor;
         if (other.topMargin.hasValue()) topMargin = other.topMargin;
         if (other.orientation.hasValue()) orientation = other.orientation;
-
     }
 
     public void mergeWithDefault(LayoutOptions defaultOptions) {

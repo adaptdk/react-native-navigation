@@ -188,6 +188,10 @@ public class StackPresenter {
         topBar.setTitleTypeface(options.title.fontFamily);
         topBar.setTitleAlignment(options.title.alignment);
 
+        if (options.title.rightLeftPadding.hasValue()) {
+            topBar.setTitleRightLeftPadding(UiUtils.dpToPx(activity, options.title.rightLeftPadding.get(0)));
+        }
+
         topBar.setSubtitle(options.subtitle.text.get(""));
         topBar.setSubtitleFontSize(options.subtitle.fontSize.get(defaultSubtitleFontSize));
         topBar.setSubtitleColor(options.subtitle.color.get(DEFAULT_SUBTITLE_COLOR));
@@ -380,6 +384,10 @@ public class StackPresenter {
                 controller.getView().setLayoutParams(getComponentLayoutParams(options.title.component));
                 topBar.setTitleComponent(controller.getView());
             }
+        }
+
+        if (options.title.rightLeftPadding.hasValue()) {
+            topBar.setTitleRightLeftPadding(UiUtils.dpToPx(activity, options.title.rightLeftPadding.get(0)));
         }
 
         if (options.title.color.hasValue()) topBar.setTitleTextColor(options.title.color.get());

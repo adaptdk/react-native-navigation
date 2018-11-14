@@ -141,6 +141,11 @@ export interface OptionsTopBarTitle {
    * #### (Android specific)
    */
   height?: number;
+  /**
+   * Layout right and left padding
+   * #### (Android specific)
+   */
+  rightLeftPadding?: number;
 }
 
 export interface OptionsTopBarSubtitle {

@@ -57,6 +57,10 @@ public class TitleBar extends Toolbar {
         addView(component);
     }
 
+    public void setTitlePadding(int left, int top, int right, int bottom) {
+        this.setPadding(left, top, right, bottom);
+    }
+
     public void setBackgroundColor(Colour color) {
         if (color.hasValue()) setBackgroundColor(color.get());
     }
@@ -177,6 +181,7 @@ public class TitleBar extends Toolbar {
         if (rightButtons == null) return;
         clearRightButtons();
         for (int i = 0; i < rightButtons.size(); i++) {
+            System.out.println("hallo world");
             rightButtons.get(i).addToMenu(this, rightButtons.size() - i - 1);
         }
     }

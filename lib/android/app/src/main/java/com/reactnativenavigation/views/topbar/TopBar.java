@@ -175,6 +175,10 @@ public class TopBar extends AppBarLayout implements ScrollEventListener.ScrollAw
         titleBar.setComponent(component);
     }
 
+    public void setTitleRightLeftPadding(int padding) {
+        titleBar.setTitlePadding(padding, 0, padding, 0);
+    }
+
     public void setBackgroundComponent(Component component) {
         if (component.hasValue()) {
             topBarBackgroundViewController.setComponent(component);

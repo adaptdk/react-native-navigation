@@ -1,4 +1,5 @@
 #import "Constants.h"
+#import "RNNTabBarController.h"
 
 @implementation Constants
 
@@ -7,7 +8,11 @@
 }
 
 + (CGFloat)topBarHeight {
-	return UIApplication.sharedApplication.delegate.window.rootViewController.navigationController.navigationBar.frame.size.height;
+	if (@available(iOS 11.0, *)) {
+		return [UIApplication sharedApplication].keyWindow.safeAreaInsets.top + 54;
+	}
+
+	return 54;
 }
 
 + (CGFloat)statusBarHeight {
@@ -15,7 +20,11 @@
 }
 
 + (CGFloat)bottomTabsHeight {
-	return UIApplication.sharedApplication.delegate.window.rootViewController.tabBarController.tabBar.frame.size.height;
+	if (@available(iOS 11.0, *)) {
+		return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom + 50;
+	}
+	
+	return 50;
 }
 
 @end

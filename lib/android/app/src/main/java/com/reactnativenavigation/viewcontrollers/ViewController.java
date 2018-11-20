@@ -219,7 +219,7 @@ public abstract class ViewController<T extends ViewGroup> implements ViewTreeObs
     @CallSuper
     public void destroy() {
         if (isShown) {
-            isShown = false;
+            //isShown = false;
             onViewDisappear();
         }
         yellowBoxDelegate.destroy();

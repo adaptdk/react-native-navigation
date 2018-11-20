@@ -17,6 +17,7 @@ import com.reactnativenavigation.presentation.BottomTabsPresenter;
 import com.reactnativenavigation.presentation.Presenter;
 import com.reactnativenavigation.react.EventEmitter;
 import com.reactnativenavigation.utils.CommandListener;
+import com.reactnativenavigation.utils.CommandListenerAdapter;
 import com.reactnativenavigation.utils.ImageLoader;
 import com.reactnativenavigation.utils.ImageLoadingListenerAdapter;
 import com.reactnativenavigation.viewcontrollers.ChildControllersRegistry;
@@ -130,7 +131,11 @@ public class BottomTabsController extends ParentController implements AHBottomNa
     @Override
     public boolean onTabSelected(int index, boolean wasSelected) {
         eventEmitter.emitBottomTabSelected(bottomTabs.getCurrentItem(), index);
-        if (wasSelected) return false;
+        if (wasSelected) {
+            tabs.get(index).handleBack(new CommandListenerAdapter());
+            return false;
+        }
+
         selectTab(index);
         return false;
 	}

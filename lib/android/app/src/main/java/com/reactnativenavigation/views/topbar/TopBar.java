@@ -1,6 +1,6 @@
 package com.reactnativenavigation.views.topbar;
 
-import androidx..SuppressLint;
+import androidx.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;

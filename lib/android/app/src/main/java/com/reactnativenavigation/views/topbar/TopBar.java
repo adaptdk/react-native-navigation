@@ -1,6 +1,5 @@
 package com.reactnativenavigation.views.topbar;
 
-import androidx.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -45,7 +44,6 @@ import java.util.List;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
-@SuppressLint("ViewConstructor")
 public class TopBar extends AppBarLayout implements ScrollEventListener.ScrollAwareView {
     private TitleBar titleBar;
     private final TopBarCollapseBehavior collapsingBehavior;

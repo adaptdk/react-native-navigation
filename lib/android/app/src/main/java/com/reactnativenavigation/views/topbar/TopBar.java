@@ -1,17 +1,21 @@
 package com.reactnativenavigation.views.topbar;
 
-import android.annotation.SuppressLint;
+import androidx..SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
+
 import com.google.android.material.appbar.AppBarLayout;
+
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -177,12 +181,9 @@ public class TopBar extends AppBarLayout implements ScrollEventListener.ScrollAw
         titleBar.setTitlePadding(padding, 0, padding, 0);
     }
 
-    public void setBackgroundComponent(Component component) {
-        if (component.hasValue()) {
-            topBarBackgroundViewController.setComponent(component);
-            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
-            root.addView(topBarBackgroundViewController.getView(), 0, lp);
-        }
+    public void setBackgroundComponent(View component) {
+        this.component = component;
+        root.addView(component, 0);
     }
 
     public void setTopTabFontFamily(int tabIndex, Typeface fontFamily) {
@@ -270,7 +271,8 @@ public class TopBar extends AppBarLayout implements ScrollEventListener.ScrollAw
     }
 
     public void hideAnimate(AnimationOptions options) {
-        hideAnimate(options, () -> {});
+        hideAnimate(options, () -> {
+        });
     }
 
     public void hideAnimate(AnimationOptions options, Runnable onAnimationEnd) {

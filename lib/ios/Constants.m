@@ -20,11 +20,7 @@
 }
 
 + (CGFloat)bottomTabsHeight {
-	if (@available(iOS 11.0, *)) {
-		return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom + 50;
-	}
-	
-	return 50;
+	return CGRectGetHeight(((UITabBarController *)((UIWindow *)(UIApplication.sharedApplication.windows[0])).rootViewController).tabBar.frame);
 }
 
 @end

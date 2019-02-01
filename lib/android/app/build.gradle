@@ -64,7 +64,7 @@ android {
             dimension "RNN.reactNativeVersion"
             buildConfigField("int", "REACT_NATVE_VERSION_MINOR", "57")
         }
-        reactNative57WixFork {
+        reactNative57_5 {
             dimension "RNN.reactNativeVersion"
             buildConfigField("int", "REACT_NATVE_VERSION_MINOR", "57")
         }
@@ -87,7 +87,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation 'com.github.wix-playground:ahbottomnavigation:2.4.5'
+    implementation 'com.github.wix-playground:ahbottomnavigation:2.4.8'
     implementation 'com.github.wix-playground:reflow-animator:1.0.4'
     implementation 'com.github.clans:fab:1.6.4'
 

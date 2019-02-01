@@ -32,6 +32,7 @@ public class TitleOptions {
         options.fontFamily = typefaceManager.getTypeFace(json.optString("fontFamily", ""));
         options.alignment = Alignment.fromString(TextParser.parse(json, "alignment").get(""));
         options.rightLeftPadding = NumberParser.parse(json, "rightLeftPadding");
+        options.height = NumberParser.parse(json, "height");
 
         return options;
     }

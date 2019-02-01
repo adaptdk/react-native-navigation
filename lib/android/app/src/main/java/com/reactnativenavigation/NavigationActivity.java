@@ -26,7 +26,7 @@ import com.reactnativenavigation.viewcontrollers.navigator.RootPresenter;
 public class NavigationActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler, PermissionAwareActivity, JsDevReloadHandler.ReloadListener {
     @Nullable
     private PermissionListener mPermissionListener;
-    
+
     protected Navigator navigator;
 
     @Override
@@ -73,7 +73,12 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
     @Override
     public void invokeDefaultOnBackPressed() {
         if (!navigator.handleBack(new CommandListenerAdapter())) {
-            super.onBackPressed();
+            // Old wix code super.onBackPressed();
+            // To prevent navigators settings for being overwritten we change activity
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
         }
     }
 
